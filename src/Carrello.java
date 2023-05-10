@@ -30,14 +30,23 @@ public class Carrello {
         this.prodotti = prodotti;
     }
 
+    /*
+     * Metodo che aggiunge il prodotta al carrello
+     */
     public void aggiungiProdotti(Prodotto p) {
         prodotti.add(p);
     }
 
+    /*
+     * Metodo che rimuove il prodotto dal carrello
+     */
     public void rimuoviProdotti(Prodotto p) {
         prodotti.remove(p);
     }
 
+    /*
+     * Metodo che ritorna il totale del carrello
+     */
     public String calcolaTotale() {
         double sum = 0;
         for (Prodotto pr : prodotti) {
@@ -46,7 +55,9 @@ public class Carrello {
         }
         return "Il totale del carrello è " + sum;
     }
-
+    /*
+     * Metodo che stampa in console i prodotti
+     */
     public void printInfo() {
         for (Prodotto prodotto : prodotti) {
             System.out.println(prodotto);
@@ -54,6 +65,9 @@ public class Carrello {
         }
     }
 
+    /*
+     * Metodo che scrive il carrello in un file esterno .csv
+     */
     public void salvaCarrello() throws IOException {
         File file = new File("carrello.csv");
         FileWriter fileWriter = new FileWriter(file);
